@@ -1,0 +1,24 @@
+ALGORITHM checkpoint
+VAR
+    set1 : ARRAY_OF INTEGER[];
+    set2 : ARRAY_OF INTEGER[];
+
+BEGIN
+
+FOR i FROM 0 TO set1.length-1  DO
+    j:=0
+    WHILE (j<=set2.length-1) DO
+        IF (set1[i]=set2[j]) THEN
+           
+             sum:=sum+set1[i]+set2[j]
+             
+        END_IF
+        j++
+        
+    END_WHILE   
+END_FOR
+ 
+ 
+
+
+END

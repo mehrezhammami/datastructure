@@ -1,0 +1,31 @@
+ALGORITHM checkpoint
+VAR
+    set1 : ARRAY_OF INTEGER[];
+    set2 : ARRAY_OF INTEGER[];
+    h:HASH_TABLE<INTEGER,INTEGER>
+BEGIN
+    FOR i FROM 0 TO set1.length-1 DO
+        IF (h.lookup(set1[i])=true) THEN
+            count:=h.get(set1[i])
+            h.insert(set1[i],count+1)
+            ELSE
+            count:=1
+            h.insert(set1[i],count)
+        END_IF
+    END_FOR
+    FOR i FROM 0 TO set2.length-1 DO
+        IF (h.lookup(set2[i])=true) THEN
+            count:=h.get(set2[i])
+            h.insert(set2[i],count+1)
+            ELSE
+            count:=1
+            h.insert(set2[i],count)
+        END_IF
+    END_FOR
+    tab=h.getkeys()
+    FOR i FROM 0 TO tab.length-1 DO
+        IF (h.get(tab[i])=1) THEN
+            sum:=sum+tab[i]
+        END_IF
+    END_FOR
+END
